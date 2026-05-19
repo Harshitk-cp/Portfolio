@@ -1,217 +1,342 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
-    <title>Harshit Kumar Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="default.css">
-    <link id="theme-style" rel="stylesheet" type="text/css" href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Backend engineer focused on AI memory infrastructure and distributed systems. Author of Engram, an open-source cognitive memory system for AI agents.">
+  <meta property="og:title" content="Harshit Kumar — Backend Engineer">
+  <meta property="og:description" content="Backend engineer focused on AI memory infrastructure. Author of Engram — an open-source cognitive memory system for AI agents. Currently at Finplify.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Harshit Kumar — Backend Engineer</title>
+
+  <!-- Anti-FOUC: set theme before first paint -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:ital,wght@0,400;0,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="default.css">
 </head>
 <body>
-    <section class="s1">
-        <div class="main-container">
-            <div class="greeting-wrapper">
-                <h1>Hi, I'm Harshit Kumar</h1>
-            </div>
 
-            <div class="intro-wrapper">
-                <div class="nav-wrapper">
-                    <a href="index.html">
-                        <div class="dots-wrapper">
-                            <div id="dot-1" class="browser-dot"></div>
-                            <div id="dot-2" class="browser-dot"></div>
-                            <div id="dot-3" class="browser-dot"></div>
-                        </div>
-                    </a>
-                    <ul id="navigation">
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
+  <!-- Terminal loading screen — JS animates and removes it -->
+  <div id="termLoader" class="term-loader" aria-hidden="true" role="presentation">
+    <div class="term-body" id="termBody"></div>
+  </div>
 
-                <div class="left-column">
-                    <img id="profile_pic" src="images/Harshit.jpg" alt="Profile Picture">
-                    <h5 style="text-align: center;line-height: 0;"></h5>
-                    <div id="theme-options-wrapper">
-                    </div>
-                    <p id="settings-note">Learning never stops, neither does the code.</p>
-                </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <!-- Sun icon (visible in dark mode — click to go light) -->
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <!-- Moon icon (visible in light mode — click to go dark) -->
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
 
-                <div class="right-column">
-                    <div id="preview-shadow">
-                        <div id="preview">
-                            <div id="corner-tl" class="corner"></div>
-                            <div id="corner-tr" class="corner"></div>
-                            <h3>What I Do</h3>
-                            <p>I'm a software engineer @Grappus specializing in full-stack development with a focus on Flutter and backend technologies.</p>
-                            <div id="corner-br" class="corner"></div>
-                            <div id="corner-bl" class="corner"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <main class="container">
+
+    <!-- ─── Hero ─────────────────────────────────────── -->
+    <section class="hero">
+      <h1 class="hero-name">Harshit Kumar</h1>
+
+      <p class="hero-tagline">
+        Backend engineer focused on AI memory infrastructure and distributed systems.
+        Three years building Go services in fintech. Currently at
+        <a href="https://finplify.in" target="_blank" rel="noopener noreferrer">Finplify</a>,
+        building <a href="https://engram.to" target="_blank" rel="noopener noreferrer">Engram</a>
+        on the side.
+      </p>
+
+      <p class="hero-location">Bengaluru, India &middot; Open to remote (UK / EU / US)</p>
+
+      <nav class="hero-links" aria-label="External profiles">
+        <a href="https://github.com/Harshitk-cp" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/harshitk-cp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://dev.to/harshitk" target="_blank" rel="noopener noreferrer">Dev.to</a>
+        <a href="mailto:harshitk.cp@gmail.com">Email</a>
+      </nav>
     </section>
 
-    <section class="s2">
-        <div class="main-container">
-            <div class="about-wrapper">
-                <div class="about-me">
-                    <h4>More about me</h4>
-                    <p>I'm an engineer from India with a degree in Computer Science Engineering.</p>
-                    <p> I enjoy developing innovative applications and services by exploring new technologies.</p>
+    <!-- ─── Engram ────────────────────────────────────── -->
+    <section id="engram" class="section">
+      <span class="section-label">What I&rsquo;m building</span>
 
-                    <hr>
+      <div class="engram-card">
 
-                    <h4>TECH STACK</h4>
-                    <p>Full stack developer with expertise in Go and Flutter. <a target="_blank" href="resume.pdf">Download Resume</a></p>
-
-                    <div id="skills">
-                        <ul>
-                            <li>Go</li>
-                            <li>Flutter</li>
-                            <li>Typescript</li>
-                            <li>Java</li>
-                            <li>Websocket</li>
-                        </ul>
-
-                        <ul>
-                            <li>GIT</li>
-                            <li>Linux</li>
-                            <li>FFmpeg</li>
-                            <li>WebRTC</li>
-                            <li>Docker</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <img id="social_img" src="images/github.png" alt="GitHub Logo">
-                    <h3>Find me on socials</h3>
-                    <a target="_blank" href="https://github.com/Harshitk-cp">GitHub</a>
-                    <br>
-                    <a target="_blank" href="https://www.linkedin.com/in/harshitk-cp/">LinkedIn</a>
-                    <br>
-                    <a target="_blank" href="https://dev.to/harshitk">Dev.to</a>
-                </div>
+        <!-- Architecture diagram -->
+        <div class="arch-scroll">
+          <div class="arch-diagram" role="img" aria-label="Engram architecture: Observation flows through Confidence Engine to Belief Store, then to Agent Query Interface">
+            <div class="arch-node">
+              <span class="arch-node-title">Observation</span>
             </div>
+            <span class="arch-arrow" aria-hidden="true">&rarr;</span>
+            <div class="arch-node">
+              <span class="arch-node-title">Confidence Engine</span>
+              <span class="arch-node-sub">decay &middot; reinforce &middot; contradict</span>
+            </div>
+            <span class="arch-arrow" aria-hidden="true">&rarr;</span>
+            <div class="arch-node">
+              <span class="arch-node-title">Belief Store</span>
+              <span class="arch-node-sub">PostgreSQL + pgvector</span>
+            </div>
+            <span class="arch-arrow" aria-hidden="true">&rarr;</span>
+            <div class="arch-node">
+              <span class="arch-node-title">Agent Query</span>
+            </div>
+          </div>
         </div>
+
+        <div class="engram-header">
+          <h2 class="engram-title">Engram</h2>
+          <div class="engram-links">
+            <!-- Update the GitHub URL if the repo name differs -->
+            <a href="https://github.com/Harshitk-cp/engram" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+            <a href="https://engram.to" target="_blank" rel="noopener noreferrer">engram.to &nearr;</a>
+          </div>
+        </div>
+
+        <p class="engram-description">
+          Most agent frameworks bolt on memory as an afterthought &mdash; a vector store that does
+          nearest-neighbor search and calls it recall. Engram takes a different position: memory
+          should model belief. Each fact carries a confidence score, decays over time unless
+          reinforced, and can be contradicted or superseded by new observations. The goal is agents
+          that reason about certainty, not just agents that retrieve context. Built in Go with
+          PostgreSQL and pgvector.
+        </p>
+
+        <blockquote class="engram-thesis">
+          The hypothesis: vector similarity is the wrong primitive for agent memory.
+          Retrieval is not the same as belief.
+        </blockquote>
+
+        <a href="https://dev.to/harshitk/memory-is-not-a-vector-database-why-ai-agents-need-beliefs-not-storage-2baj" target="_blank" rel="noopener noreferrer" class="engram-readmore">
+          Read the deep-dive &rarr;
+        </a>
+
+      </div>
     </section>
 
-    <section class="s1">
-        <div class="main-container">
-            <h3 style="text-align: center;">Some of my projects</h3>
+    <!-- ─── Writing ───────────────────────────────────── -->
+    <section id="writing" class="section">
+      <span class="section-label">Writing</span>
 
-            <div class="post-wrapper">
+      <div class="writing-list">
 
-                <div class="project">
-                    <img class="thumbnail" src="images/dnscli.png" alt="DNS Project Thumbnail">
-                    <div class="post-preview">
-                        <h6 class="post-title">DNS Server and CLI Tool</h6>
-                        <p class="post-intro">Implemented a DNS server with caching, and ad-blocking. Along with a CLI tool for querying DNS records.</p>
-                        <a href="project1.html">Read More</a>
-                    </div>
-                </div>
-
-                <div class="project">
-                     <img class="thumbnail" src="images/termtify.png" alt="Spotify TUI Project Thumbnail">
-                    <div class="post-preview">
-                        <h6 class="post-title">Termtify</h6>
-                        <p class="post-intro">Developed a TUI application for Spotify, bringing your favourite music player right in your terminal.</p>
-                        <a href="project2.html">Read More</a>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <img class="thumbnail" src="images/streamix.png" alt="Project Thumbnail">
-                     <div class="post-preview">
-                        <h6 class="post-title">Live Streaming Service</h6>
-                        <p class="post-intro">Built a low-latency streaming platform using Next.js and Go, with RTMP ingress and WebRTC integration.</p>
-                        <a href="project3.html">Read More</a>
-                    </div>
-                </div>
-
-
-                <div class="project">
-                    <img class="thumbnail" src="images/compiler.png" alt="Project 3 Thumbnail">
-                    <div class="post-preview">
-                        <h6 class="post-title">Code Compiler</h6>
-                        <p class="post-intro">Developed an LLVM-based AOT code compiler, implementing optimizations for efficient machine code generation.</p>
-                        <a href="project4.html">Read More</a>
-                    </div>
-                </div>
-
-
-                <div class="project">
-                    <img class="thumbnail" src="images/ledSoftware.png" alt="Smart LED Control Project Thumbnail">
-                    <div class="post-preview">
-                        <h6 class="post-title">Smart LED Control Software</h6>
-                        <p class="post-intro">Developed a software for smart LED lights control. Built using Flutter and Node.js, it offers dynamic lighting control based on real-time audio and video.</p>
-                        <div class="link-container">
-                            <a class="project-link" href="https://docs.google.com/document/d/1MiO8z6DdsH-ast7TGI2umVaehO15fRc6/edit">Project Report</a>
-                            <a class="project-link" href="https://github.com/Harshitk-cp/smart_light_dashboard">Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <img class="thumbnail" src="images/finplify.png" alt="Fintech App Thumbnail">
-                    <div class="post-preview">
-                        <h6 class="post-title">Finplify</h6>
-                        <p class="post-intro">Developed a fintech application for a startup for investment and portfolio tracking. As the sole developer, I built the app, which is now actively used by many users.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.finplify.app&pcampaignid=web_share">Play Store</a>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-    <section class="s2">
-    <div class="main-container">
-        <h3 style="text-align: center;">Open Source Contributions</h3>
-
-        <div class="contributions-wrapper">
-            <a href="https://github.com/glasskube/glasskube" target="_blank" class="contribution-link">
-                <div class="contribution-item">
-                    <img class="contribution-image" src="images/glasskube.png" alt="Glasskube">
-                    <div class="contribution-description">
-                        <h6 class="contribution-title">Glasskube</h6>
-                        <p>Contributed to Glasskube, an open-source package manager for Kubernetes, focusing on container orchestration and deployment efficiency.</p>
-                        <br>
-                        <p>Added multiple CLI features & helped with a bug in installation wizard script using CLI</p>
-                    </div>
-                </div>
+        <article class="writing-item">
+          <div class="writing-meta">
+            <a href="https://dev.to/harshitk/memory-is-not-a-vector-database-why-ai-agents-need-beliefs-not-storage-2baj" target="_blank" rel="noopener noreferrer" class="writing-title">
+              Memory Is Not a Vector Database: Why AI Agents Need Beliefs, Not Storage
             </a>
+            <time class="writing-date">2025</time>
+          </div>
+          <p class="writing-desc">
+            The case for confidence-weighted belief systems over vector similarity as the
+            foundation for how AI agents remember.
+          </p>
+        </article>
 
-            <a href="https://github.com/stack-auth/stack" target="_blank" class="contribution-link">
-                <div class="contribution-item">
-                    <img class="contribution-image" src="images/stack.png" alt="Flutter Contributions">
-                    <div class="contribution-description">
-                        <h6 class="contribution-title">Stack Auth</h6>
-                       <p>Stack Auth is an open-source alternative to Clerk/Auth0 for user authentication.</p>
-                        <br>
-                        <p>As an unofficial team member, I am developing a Go SDK along with the core team to facilitate integration with Stack Auth’s REST API, aiming to enhance its usability for go developers.</p>
-                    </div>
-                </div>
+        <article class="writing-item">
+          <div class="writing-meta">
+            <a href="https://dev.to/harshitk/integrating-rtmp-and-webrtc-for-real-time-streaming-2lbb" target="_blank" rel="noopener noreferrer" class="writing-title">
+              Integrating RTMP and WebRTC for Real-Time Streaming
             </a>
-        </div>
-    </div>
-</section>
+            <time class="writing-date">2024</time>
+          </div>
+          <p class="writing-desc">
+            How RTMP ingest and WebRTC delivery work together in a low-latency streaming
+            pipeline, and the architectural tradeoffs that come with sub-second latency
+            constraints.
+          </p>
+        </article>
 
+      </div>
 
-    <section class="s2">
-        <div class="main-container">
-            <h3 style="text-align: center;">Get In Touch</h3>
-
-            <div>
-                <p>Email: <a href="mailto:harshsitk.cp@gmail.com">harshitk.cp@gmail.com</a></p>
-                <p>Phone: <a href="tel:+918528776099">+91 8528776099</a></p>
-            </div>
-        </div>
+      <a href="https://dev.to/harshitk" target="_blank" rel="noopener noreferrer" class="section-more">
+        All posts on Dev.to &rarr;
+      </a>
     </section>
 
-    <script type="text/javascript" src="script.js"></script>
+    <!-- ─── Work ──────────────────────────────────────── -->
+    <section id="work" class="section">
+      <span class="section-label">Work</span>
+
+      <div class="work-list">
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-meta">
+              <span class="work-role">Senior Software Engineer</span>
+              <span class="work-sep">&middot;</span>
+              <a href="https://finplify.in" target="_blank" rel="noopener noreferrer" class="work-company">Finplify</a>
+            </div>
+            <time class="work-period">2023 &mdash; present</time>
+          </div>
+          <p class="work-desc">
+            I design and own the Go-based ledger and reconciliation infrastructure &mdash;
+            event-driven services, PostgreSQL, strict financial correctness requirements.
+            Financial systems have zero tolerance for data errors; this role has pushed my
+            engineering standards in ways that fast-moving product work rarely does. Currently
+            the primary backend engineer on the reconciliation platform.
+          </p>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header">
+            <div class="work-meta">
+              <span class="work-role">Software Engineer</span>
+              <span class="work-sep">&middot;</span>
+              <a href="https://www.grappus.com/" target="_blank" rel="noopener noreferrer" class="work-company">Grappus</a>
+            </div>
+            <time class="work-period">2021 &mdash; 2023</time>
+          </div>
+          <p class="work-desc">
+            Built backend systems in Go and Node.js across multiple client product teams &mdash;
+            APIs, data pipelines, early-stage product backends. First professional context where
+            I owned systems end-to-end, from architecture decisions to production support.
+            Shipped several products from zero to launch.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Projects ─────────────────────────────────── -->
+    <section id="projects" class="section">
+      <span class="section-label">Selected Projects</span>
+
+      <div class="projects-list">
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-name">Engram</h3>
+            <div class="project-links">
+              <a href="#engram">Overview &uarr;</a>
+              <a href="https://engram.to" target="_blank" rel="noopener noreferrer">Site &nearr;</a>
+            </div>
+          </div>
+          <p class="project-desc">
+            Cognitive memory system for AI agents with belief dynamics, temporal decay,
+            and semantic retrieval. Covered in detail above.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-name">DNS Server</h3>
+            <div class="project-links">
+              <!-- Update to actual repo name if different -->
+              <a href="https://github.com/Harshitk-cp/dns-server" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+            </div>
+          </div>
+          <p class="project-desc">
+            A recursive DNS resolver written in Go with DNS-over-HTTPS (DoH) support and
+            ad-blocking. Handles full query parsing, recursive traversal from root to
+            authoritative name servers, and in-memory caching. Not a client wrapper &mdash;
+            it implements the actual resolution algorithm. Includes a companion CLI for
+            querying DNS records.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <h3 class="project-name">Live Streaming Service</h3>
+            <div class="project-links">
+              <!-- Update to actual repo name if different -->
+              <a href="https://github.com/Harshitk-cp/rtmp_server" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+            </div>
+          </div>
+          <p class="project-desc">
+            Low-latency video streaming platform with WebRTC for real-time broadcast and
+            RTMP for stream ingestion, with a Next.js frontend. The interesting work is in
+            the signaling architecture and the latency tradeoffs &mdash; WebRTC&rsquo;s
+            sub-second delivery versus HLS&rsquo;s reliability. Handles media routing,
+            session management, and adaptive playback.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Open Source ───────────────────────────────── -->
+    <section id="oss" class="section">
+      <span class="section-label">Open Source</span>
+
+      <div class="oss-list">
+
+        <div class="oss-item">
+          <a href="https://github.com/glasskube/glasskube" target="_blank" rel="noopener noreferrer" class="oss-name">
+            Glasskube
+          </a>
+          <p class="oss-desc">
+            Kubernetes package manager. Added CLI features and fixed bugs in the
+            installation wizard.
+          </p>
+        </div>
+
+        <div class="oss-item">
+          <a href="https://github.com/glasskube/distr" target="_blank" rel="noopener noreferrer" class="oss-name">
+            Distr
+          </a>
+          <p class="oss-desc">
+            Developer distribution tooling by the Glasskube team. Infrastructure
+            and deployment workflow contributions.
+          </p>
+        </div>
+
+        <div class="oss-item">
+          <!-- Update this href to the actual Hive repo URL -->
+          <a href="https://github.com/Harshitk-cp" target="_blank" rel="noopener noreferrer" class="oss-name">
+            Hive
+          </a>
+          <p class="oss-desc">
+            Infrastructure tooling contributions.
+          </p>
+        </div>
+
+        <div class="oss-item">
+          <a href="https://github.com/stack-auth/stack" target="_blank" rel="noopener noreferrer" class="oss-name">
+            Stack Auth
+          </a>
+          <p class="oss-desc">
+            Building the Go SDK alongside the core team for this open-source
+            Clerk/Auth0 alternative.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Footer ───────────────────────────────────── -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="mailto:harshitk.cp@gmail.com">harshitk.cp@gmail.com</a>
+        <a href="https://github.com/Harshitk-cp" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/harshitk-cp/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://dev.to/harshitk" target="_blank" rel="noopener noreferrer">Dev.to</a>
+      </div>
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="footer-resume">
+        Resume PDF &nearr;
+      </a>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
